@@ -7,7 +7,7 @@ import { styles } from '../theme/appTheme';
 
 const menuItems: MenuItem[] = [
   {name: 'Animation101', icon: 'animation', screen: 'Animation101Screen'},
-  {name: 'Animation102', icon: 'auto_awesome_motion', screen: 'Animation102Screen'},
+  {name: 'Animation102', icon: 'auto-awesome-motion', screen: 'Animation102Screen'},
 ]
 
 export const HomeScreen = () => {
@@ -16,7 +16,7 @@ export const HomeScreen = () => {
   const renderListHeader = () => {
     return (
       <View style={{ marginTop: top + 20, marginBottom: 20 }}>
-        <Text style={styles.title}></Text>
+        <Text style={styles.title}>Animations</Text>
       </View>
     )
   }

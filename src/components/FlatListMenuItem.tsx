@@ -17,7 +17,7 @@ export const FlatListMenuItem = ({item: { name, icon, screen }} : Props) => {
         <Icon name={icon} size={23} color='blue'/>
         <Text style={ styles.itemText }>{name}</Text>
         <View style={{ flex: 1 }}/>
-        <Icon name='keyboard_arrow_right' size={23} color='blue'/>
+        <Icon name='arrow-right' size={23} color='blue'/>
       </View>
     </TouchableOpacity>
   )
