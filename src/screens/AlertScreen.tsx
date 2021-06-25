@@ -21,10 +21,22 @@ export const AlertScreen = () => {
     );
   }
 
+  const showPrompt = () => {
+    Alert.prompt(
+      'Prompt example',
+      'This is a prompt example.',
+      (text: string) => console.log(`info: ${text}`),
+      'plain-text',
+      'Hello!',
+      ''
+    );
+  }
+
   return (
     <View style={styles.globalMargin}>
       <HeaderTitle title='Alerts'/>
       <Button title='Show alert' onPress={showAlert}/>
+      <Button title='Show prompt' onPress={showPrompt}/>
     </View>
   )
 }
