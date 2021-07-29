@@ -6,4 +6,5 @@ export const menuItems: MenuItem[] = [
   {name: 'Switches', icon: 'toggle-on', screen: 'SwitchScreen'},
   {name: 'Alerts', icon: 'warning', screen: 'AlertScreen'},
   {name: 'TextInput', icon: 'text-fields', screen: 'TextInputScreen'},
+  {name: 'Pull to refresh', icon: 'refresh', screen: 'PullToRefreshScreen'},
 ];
