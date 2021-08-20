@@ -7,4 +7,5 @@ export const menuItems: MenuItem[] = [
   {name: 'Alerts', icon: 'warning', screen: 'AlertScreen'},
   {name: 'TextInput', icon: 'text-fields', screen: 'TextInputScreen'},
   {name: 'Pull to refresh', icon: 'refresh', screen: 'PullToRefreshScreen'},
+  {name: 'Section List', icon: 'list', screen: 'CustomSectionListScreen'},
 ];
