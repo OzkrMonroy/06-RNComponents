@@ -8,4 +8,5 @@ export const menuItems: MenuItem[] = [
   {name: 'TextInput', icon: 'text-fields', screen: 'TextInputScreen'},
   {name: 'Pull to refresh', icon: 'refresh', screen: 'PullToRefreshScreen'},
   {name: 'Section List', icon: 'list', screen: 'CustomSectionListScreen'},
+  {name: 'Modal', icon: 'list', screen: 'ModalScreen'},
 ];
