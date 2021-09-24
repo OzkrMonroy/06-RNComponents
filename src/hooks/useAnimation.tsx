@@ -6,10 +6,10 @@ export const useAnimation = () => {
   const transformPosition = useRef(new Animated.Value(0)).current;
   const pan = useRef(new Animated.ValueXY()).current;
 
-  const fadeIn = () => {
+  const fadeIn = (duration: number = 200) => {
     Animated.timing(opacity, {
       toValue: 1,
-      duration: 200,
+      duration,
       useNativeDriver: true,
     }).start()
   }
