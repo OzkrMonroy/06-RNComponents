@@ -10,4 +10,5 @@ export const menuItems: MenuItem[] = [
   {name: 'Section List', icon: 'list', screen: 'CustomSectionListScreen'},
   {name: 'Modal', icon: 'list', screen: 'ModalScreen'},
   {name: 'Infinite Scroll', icon: 'arrow-circle-down', screen: 'InfiniteScrollScreen'},
+  {name: 'Slides', icon: 'arrow-circle-down', screen: 'SlidesScreen'},
 ];
