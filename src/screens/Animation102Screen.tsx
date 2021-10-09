@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, View, Animated } from 'react-native';
 import { useAnimation } from '../hooks/useAnimation';
+import { ThemeContext } from '../context/theme/ThemeContext';
 
 export const Animation102Screen = () => {
+  const { theme: { colors } }  =useContext(ThemeContext)
   const {pan, drawableView} = useAnimation();
   const panResponse = drawableView();
 
   return (
     <View style={styles.container}>
-      <Animated.View {...panResponse.panHandlers} style={[pan.getLayout(), styles.cyanBox]}/>
+      <Animated.View {...panResponse.panHandlers} style={{
+        ...pan.getLayout(), 
+        ...styles.cyanBox,
+        backgroundColor: colors.primary
+      }}/>
     </View>
   )
 }

@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Animated, Dimensions, Image, ImageSourcePropType, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useAnimation } from '../hooks/useAnimation';
+import { ThemeContext } from '../context/theme/ThemeContext';
 import { StackScreenProps } from '@react-navigation/stack';
 
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window')
@@ -34,6 +35,7 @@ const items: Slide[] = [
 interface Props extends StackScreenProps<any, any>{}
 
 export const SlidesScreen = ({ navigation }: Props) => {
+  const { theme: { colors } }  =useContext(ThemeContext)
   const [currentCarouselIndex, setCurrentCarouselIndex] = useState(0)
   const [showButton, setShowButton] = useState(false)
   const isVisible = useRef(false)
@@ -57,8 +59,8 @@ export const SlidesScreen = ({ navigation }: Props) => {
             resizeMode: 'center'
           }}
         />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.desc}</Text>
+        <Text style={{...styles.title, color: colors.text}}>{item.title}</Text>
+        <Text style={{...styles.description, color: colors.text}}>{item.desc}</Text>
       </View>
     )
   }
@@ -99,7 +101,7 @@ export const SlidesScreen = ({ navigation }: Props) => {
                   width: 10,
                   height: 10,
                   borderRadius: 10,
-                  backgroundColor: '#5856D6'
+                  backgroundColor: colors.primary
                 }}
               />
               <Animated.View style={{
@@ -110,7 +112,7 @@ export const SlidesScreen = ({ navigation }: Props) => {
                   flexDirection: 'row',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  backgroundColor: '#5856D6',
+                  backgroundColor: colors.primary,
                   width: 120,
                   height: 50,
                   borderRadius: 10,

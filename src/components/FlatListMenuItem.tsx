@@ -1,10 +1,12 @@
+import React, { useContext } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { TouchableOpacity } from 'react-native';
-import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import { ThemeContext } from '../context/theme/ThemeContext';
+
 import { MenuItem } from '../interfaces/MenuItem';
-import { useTheme } from '@react-navigation/native';
+// import { useTheme } from '@react-navigation/native';
 
 interface Props {
   item: MenuItem
@@ -12,14 +14,16 @@ interface Props {
 
 export const FlatListMenuItem = ({item: { name, icon, screen }} : Props) => {
   const navigation = useNavigation();
-  const { colors } = useTheme()
+  const { theme: { colors } }  =useContext(ThemeContext)
+  // const { colors } = useTheme()
+
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate(screen)}>
       <View style={ styles.container }>
-        <Icon name={icon} size={23} color='blue'/>
-        <Text style={ {...styles.itemText, color: colors.text} }>{name}</Text>
+        <Icon name={icon} size={23} color={colors.primary}/>
+        <Text style={{...styles.itemText, color: colors.text}}>{name}</Text>
         <View style={{ flex: 1 }}/>
-        <Icon name='arrow-right' size={23} color='blue'/>
+        <Icon name='arrow-right' size={23} color={colors.primary}/>
       </View>
     </TouchableOpacity>
   )

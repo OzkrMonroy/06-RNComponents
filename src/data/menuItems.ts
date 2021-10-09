@@ -11,4 +11,5 @@ export const menuItems: MenuItem[] = [
   {name: 'Modal', icon: 'list', screen: 'ModalScreen'},
   {name: 'Infinite Scroll', icon: 'arrow-circle-down', screen: 'InfiniteScrollScreen'},
   {name: 'Slides', icon: 'arrow-circle-down', screen: 'SlidesScreen'},
+  {name: 'Change theme', icon: 'published-with-changes', screen: 'ChangeThemeScreen'},
 ];
